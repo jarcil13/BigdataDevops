@@ -1,0 +1,5 @@
+---
+- include_tasks: packages.yml
+- include_tasks: check_ambari.yml
+- include_tasks: ambari-install.yml
+#  when: ambari_file.stat.exists

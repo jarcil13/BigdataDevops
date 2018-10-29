@@ -1,0 +1,9 @@
+---
+- name: Install dependencies
+  yum:
+    name:
+      - mvn
+      - java-8
+    state: present
+    update_cache: yes
+
