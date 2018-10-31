@@ -1,6 +1,0 @@
----
-temp_dir:        /tmp/ambari-master
-ambari_src_url:  https://www-us.apache.org/dist/ambari/ambari-2.7.1/apache-ambari-2.7.1-src.tar.gz
-ambari_dir_name:        apache-ambari-2.7.1-src
-master_user:     ambari
-master_passwd:   password

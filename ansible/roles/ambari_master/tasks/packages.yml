@@ -2,8 +2,10 @@
 - name: Install dependencies
   yum:
     name:
-      - mvn
-      - java-8
+      - wget
+      - htop
+#      - emacs
+      - expect
     state: present
     update_cache: yes
 

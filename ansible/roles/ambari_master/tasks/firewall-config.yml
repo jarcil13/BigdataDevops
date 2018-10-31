@@ -1,0 +1,24 @@
+---
+#- name: Allow requests throw port 80
+#  firewalld:
+#    zone: public
+#    service: http
+#    state: enabled
+#    permanent: true
+#  notify:
+#  - apache_restart
+#  - firewalld_restart
+
+- name: Allow Ambari Ports
+  firewalld:
+    zone: public
+    port: "{{ item }}"
+    state: enabled
+    permanent: true
+  with_items:
+  - 8080/tcp
+  - 8440/tcp
+  - 8441/tcp
+  notify:
+  - firewalld_restart
+

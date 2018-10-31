@@ -1,0 +1,9 @@
+---
+temp_dir:              /tmp/ambari-master
+ambari_src_url:        https://www-us.apache.org/dist/ambari/ambari-2.7.1/apache-ambari-2.7.1-src.tar.gz
+ambari_dir_name:       apache-ambari-2.7.1-src
+ambari_repo_url:       http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/ambari.repo
+#gpgkey_ambari_repo:    http://s3.amazonaws.com/dev.hortonworks.com/ambari/centos7/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+#baseurl_ambari_repo:   
+master_user:           ambari
+master_passwd:         password
