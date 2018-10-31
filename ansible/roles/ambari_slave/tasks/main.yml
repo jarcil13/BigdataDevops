@@ -1,0 +1,18 @@
+---
+- name: install ambari-agent
+  yum:
+    name: ambari-agent
+    state: latest
+
+- name: Configure ambari-server hostname in ambari-agent configuration
+  lineinfile:
+    dest: /etc/ambari-agent/conf/ambari-agent.ini
+    regexp: ^.*hostname=.*$
+    line: hostname="{{ master_hostname }}"
+    backup: yes
+  notify:
+   - ambari_restarted
+   - ambari_enabled
+      
+- name : Wait 10 seconds for registration
+  command : sleep 10

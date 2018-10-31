@@ -1,0 +1,10 @@
+---
+- name: ambari_restarted
+  service:
+    name: ambari-agent
+    state: restarted
+
+- name: ambari_enabled
+  service:
+    name: ambari-agent
+    enabled: yes

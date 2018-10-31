@@ -1,4 +1,4 @@
 ---
 - name: Configure hostname
   hostname:
-    name: master
+    name: "{{ master_hostname }}"
