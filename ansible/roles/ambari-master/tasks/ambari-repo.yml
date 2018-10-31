@@ -1,0 +1,11 @@
+- name: Setup Ambari Repository Dell Linux Independent Repository
+  get_url:
+    url: "{{ ambari_repo_url }}"
+    dest: /etc/yum.repos.d/ambari.repo
+    
+#      name: ambari-repo
+#      state: present
+ #     baseurl: "{{ baseurl_ambari_repo }}"
+#      description: Ambari repository
+#      gpgkey: "{{ gpgkey_ambari_repo }}"
+                          
