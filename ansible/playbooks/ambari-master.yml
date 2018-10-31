@@ -1,6 +1,0 @@
----
-- name: Role - Ambari Master 
-  hosts: master
-  roles:
-  - ambari-master
-
