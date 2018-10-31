@@ -3,6 +3,7 @@
   package:
     name: ambari-server
     state: present
+    update_cache: yes
 
 # - name: Create Temp Dir
 #   file:
