@@ -1,5 +1,5 @@
 [ master ]
-10.150.4.168      ansible_conection=local
+localhost      ansible_connection=local
 
 [ slaves ]
 host-0
