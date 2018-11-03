@@ -1,2 +1,4 @@
 ---
-master_hostname:  master
+master_hostname:  master.local
+slave1_hostname:  slave-1.local
+slave2_nostname:  slave-2.local

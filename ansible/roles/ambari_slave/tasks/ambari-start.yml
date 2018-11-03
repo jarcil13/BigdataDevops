@@ -1,0 +1,19 @@
+---
+- name: Copy configure file
+  copy:
+    src: ambari-agent.ini
+    dest: /etc/ambari-agent/conf
+    mode: 664
+
+- name: Configure ambari-server hostname in ambari-agent configuration
+  lineinfile:
+    dest: /etc/ambari-agent/conf/ambari-agent.ini
+    regexp: ^.*hostname=.*$
+    line: hostname="{{ master_hostname }}"
+    backup: yes
+  notify:
+   - ambari_restarted
+   - ambari_enabled
+      
+- name : Wait 10 seconds for registration
+  command : sleep 10

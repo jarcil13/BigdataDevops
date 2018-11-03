@@ -1,9 +1,17 @@
 ---
-- name: Copinyg script to tmp
+- name: Copying script to tmp
   copy:
     src: ambari-setup-bot
     dest: /tmp
+    owner: root
+    group: root
+    mode: 0700
 
 - name: Execute setup script
-  shell: 
-    name: /tmp/ambari-server-bot > /tmp/ambari-setup.log
+  shell: /tmp/ambari-setup-bot > /tmp/ambari-setup.log
+
+- name: Start service
+  systemd:
+    name: ambari-server
+    state: started
+    enabled: yes

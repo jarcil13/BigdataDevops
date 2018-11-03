@@ -1,0 +1,5 @@
+---
+- name: install ambari-agent
+  yum:
+    name: ambari-agent
+    state: latest
