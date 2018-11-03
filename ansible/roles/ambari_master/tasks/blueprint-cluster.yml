@@ -14,7 +14,7 @@
 - name: POST cluster configuration
   uri:
    url: http://localhost:8080/api/v1/blueprints/multinode-hdp
-   method: post
+   method: POST
    body: json/2nodes/cluster_configuration.json
    user: admin
    password: admin
@@ -27,7 +27,7 @@
 - name: POST hostmapping
   uri:
    url: http://localhost:8080/api/v1/clusters/BigDataDevOps
-   method: post
+   method: POST
    body: json/2nodes/hostmapping.json
    user: admin
    password: admin
@@ -36,5 +36,3 @@
 
 - debug:
     var: cluster-hostmapping
-
-
