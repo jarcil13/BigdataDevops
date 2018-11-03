@@ -1,0 +1,9 @@
+---
+- name: Copinyg script to tmp
+  copy:
+    src: ambari-setup-bot
+    dest: /tmp
+
+- name: Execute setup script
+  shell: 
+    name: /tmp/ambari-server-bot > /tmp/ambari-setup.log

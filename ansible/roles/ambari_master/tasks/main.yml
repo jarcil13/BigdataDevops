@@ -5,4 +5,5 @@
 - include_tasks: firewall-config.yml
 - include_tasks: ambari-repo.yml
 - include_tasks: ambari-install.yml
+- include_tasks: ambari-setup.yml
 #  when: ambari_file.stat.exists
