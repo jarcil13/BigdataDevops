@@ -1,0 +1,6 @@
+---
+- name: Role Ambari Slaves 
+  hosts: slaves
+  roles:
+   - ambari_slave
+
