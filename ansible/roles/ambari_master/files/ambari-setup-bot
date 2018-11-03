@@ -1,0 +1,52 @@
+#!/usr/bin/expect -f
+set force_conservative 1  ;# set to 1 to force conservative mode even if
+			  ;# script wasn't run conservatively originally
+if {$force_conservative} {
+	set send_slow {1 .1}
+	proc send {ignore arg} {
+		sleep .1
+		exp_send -s -- $arg
+	}
+}
+
+set timeout -1
+spawn ambari-server setup
+match_max 100000
+expect -exact "Using python  /usr/bin/python\r
+Setup ambari-server\r
+Checking SELinux...\r
+SELinux status is 'enabled'\r
+SELinux mode is 'enforcing'\r
+Temporarily disabling SELinux\r
+WARNING: SELinux is set to 'permissive' mode and temporarily disabled.\r
+OK to continue \[y/n\] (y)? "
+send -- "y\r"
+expect -exact "y\r
+Customize user account for ambari-server daemon \[y/n\] (n)? "
+send -- "n\r"
+expect -exact "n\r
+Adjusting ambari-server permissions and ownership...\r
+Checking firewall status...\r
+WARNING: iptables is running. Confirm the necessary Ambari ports are accessible. Refer to the Ambari documentation for more details on ports.\r
+OK to continue \[y/n\] (y)? "
+send -- "y\r"
+expect -exact "y\r
+Checking JDK...\r
+\[1\] Oracle JDK 1.8 + Java Cryptography Extension (JCE) Policy Files 8\r
+\[2\] Oracle JDK 1.7 + Java Cryptography Extension (JCE) Policy Files 7\r
+\[3\] Custom JDK\r
+==============================================================================\r
+Enter choice (1): "
+send -- "1\r"
+expect -exact "1\r
+To download the Oracle JDK and the Java Cryptography Extension (JCE) Policy Files you must accept the license terms found at http://www.oracle.com/technetwork/java/javase/terms/license/index.html and not accepting will cancel the Ambari Server setup and you must install the JDK and JCE files manually.\r
+Do you accept the Oracle Binary Code License Agreement \[y/n\] (y)? "
+send -- "y\r"
+expect "Enable Ambari Server to download and install GPL Licensed LZO packages \[y/n\] (n)? "
+send -- "y\r"
+expect -exact "y\r
+Completing setup...\r
+Configuring database...\r
+Enter advanced database configuration \[y/n\] (n)? "
+send -- "n\r"
+expect eof
