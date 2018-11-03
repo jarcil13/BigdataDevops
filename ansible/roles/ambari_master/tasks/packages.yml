@@ -4,7 +4,6 @@
     name:
       - wget
       - htop
-#      - emacs
       - expect
     state: present
     update_cache: yes

@@ -4,3 +4,7 @@
     name: firewalld
     state: restarted
 
+- name: ambari_server_restart
+  systemd: 
+    name: ambari-server
+    state: restarted

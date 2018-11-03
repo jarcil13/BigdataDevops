@@ -1,4 +1,11 @@
 ---
+- name: disable csrf security
+  lineinfile:
+    path: /etc/ambari-server/conf/ambari.properties
+    line: 'api.csrfPrevention.enabled=false'
+  notify:
+    - ambari_server_restart
+
 - name: get blueprint
   uri:
    url: http://localhost:8080/api/v1/blueprints
@@ -15,20 +22,19 @@
   uri:
    url: http://localhost:8080/api/v1/blueprints/multinode-hdp
    method: POST
-   body: json/2nodes/cluster_configuration.json
+   body: "{{ lookup('file','jsons/2nodes/cluster_configuration.json') }}"
+   status_code: 201
    user: admin
    password: admin
    force_basic_auth: yes
   register: cluster-configuration
 
-- debug:
-    var: cluster-configuration
-
 - name: POST hostmapping
   uri:
    url: http://localhost:8080/api/v1/clusters/BigDataDevOps
    method: POST
-   body: json/2nodes/hostmapping.json
+   body: "{{ lookup('file','jsons/2nodes/hostmapping.json') }}"
+   status_code: 202
    user: admin
    password: admin
    force_basic_auth: yes
