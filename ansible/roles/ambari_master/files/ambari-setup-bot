@@ -42,7 +42,7 @@ expect -exact "1\r
 To download the Oracle JDK and the Java Cryptography Extension (JCE) Policy Files you must accept the license terms found at http://www.oracle.com/technetwork/java/javase/terms/license/index.html and not accepting will cancel the Ambari Server setup and you must install the JDK and JCE files manually.\r
 Do you accept the Oracle Binary Code License Agreement \[y/n\] (y)? "
 send -- "y\r"
-expect "Enable Ambari Server to download and install GPL Licensed LZO packages \[y/n\] (n)? "
+expect --exact "[y/n\] (n)? "
 send -- "y\r"
 expect -exact "y\r
 Completing setup...\r
