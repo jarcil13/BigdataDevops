@@ -10,7 +10,7 @@
       },
       { "name" : "host0",
         "hosts" : [
-			{"fqdn" : "host0.local"}
+			{"fqdn" : "host-0.local"}
         ]
       }
     ]
