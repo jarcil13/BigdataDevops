@@ -5,6 +5,8 @@
      "components": [{
      "name": "PIG"
      }, {
+     "name": "MYSQL_SERVER"
+     }, {
      "name": "METRICS_COLLECTOR"
      }, {
      "name": "HBASE_MASTER"
