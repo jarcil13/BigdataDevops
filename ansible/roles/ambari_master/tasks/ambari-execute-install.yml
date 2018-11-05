@@ -2,3 +2,5 @@
 - include_tasks: ambari-repo.yml
 - include_tasks: ambari-install.yml
 - include_tasks: ambari-setup.yml
+- name : Wait 10 seconds for registration
+  command : sleep 10
