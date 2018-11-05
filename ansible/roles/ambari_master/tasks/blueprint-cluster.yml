@@ -5,6 +5,8 @@
     line: 'api.csrfPrevention.enabled=false'
   notify:
     - ambari_server_restart
+  
+- meta: flush_handlers  
 
 - name: get blueprint
   uri:
