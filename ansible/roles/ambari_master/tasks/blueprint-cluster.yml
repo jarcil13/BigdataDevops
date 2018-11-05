@@ -1,0 +1,9 @@
+---
+- name: get blueprint
+  uri:
+   url: http://localhost:8080/api/v1/blueprints
+   method: GET
+   user: admin
+   password: admin
+   force_basic_auth: yes
+    
