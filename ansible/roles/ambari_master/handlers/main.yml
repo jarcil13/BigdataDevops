@@ -5,6 +5,6 @@
     state: restarted
 
 - name: ambari_server_restart
-  systemd: 
+  service: 
     name: ambari-server
     state: restarted
