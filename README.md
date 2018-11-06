@@ -139,3 +139,10 @@ Trabajo Futuro
 
 * Hacer uso de **Xcat** para la creación de las maquinas de forma automatica, de forma que ansible sea ejecutado automaticamente y el aprovicionamiento de las maquinas sea transparente para el usuario.
 * Tener un manejo de errores más especifico y elegante en las task de Ansible.
+
+Referencias
+-----------
+
+* https://cwiki.apache.org/confluence/display/AMBARI/Blueprint
+* https://community.hortonworks.com/content/kbentry/47171/automate-hdp-installation-using-ambari-blueprints-1.html
+
