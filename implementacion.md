@@ -6,7 +6,12 @@ Las siguientes imagenes muestran los pasos conceptuales del despliegue completo 
 * ***Paso 1:*** A partir de Xcat se provicionan con un software Base (S.O, Ansible, git, etc) las N maquinas a usar. Se hacen las configuraciones iniciales 
 y luego se corre Ansible
 
+![Paso 1](img/step1.jpg)
+
 * ***Paso 2:*** Según los roles de ansible, se corre los playbooks de ansible. 
+![Paso 2](img/step2.jpg)
 
 * ***Paso 3:*** Dentro de ansible, se hace uso de la API REST BLueprints para configurar e iniciar el cluster para los servicios de
-HortonWorks. 
+HortonWorks.
+
+![Paso 3](img/step3.jpg)

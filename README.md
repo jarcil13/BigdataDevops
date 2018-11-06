@@ -1,5 +1,7 @@
 Creación automática de Cluster Hortonworks
 ===========================================
+[Documento de análisis](analisis.md)
+[Documento de implementación](implementacion.md)
 
 Tecnologías
 ------------
